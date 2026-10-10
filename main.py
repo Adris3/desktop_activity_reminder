@@ -1,5 +1,6 @@
 import time
 from tkinter import *
+from tkinter import messagebox
 
 # Create Tk Window
 root = Tk()
@@ -29,8 +30,34 @@ hourEntry.place(x=80, y=20)
 minuteEntry.place(x=130, y=20)
 secondEntry.place(x=180, y=20)
 
+# Submit function
+def submit():
+    try:
+        # check values
+        temp = int(hour.get())*3600 + int(minute.get())*60 + int(second)
+    except:
+        print("Please input valid numbers")
+
+    while temp > -1:
+        min, sec = divmod(temp, 60)
+
+        hours = 0
+        if min > 60:
+            hours, min = divmod(min, 60)
+
+        hour.set("{0:2d}".format(hours))
+        minute.set("{0:2d}".format(min))
+        second.set("{0:2d}".format(sec))
+
+        # update the GUI
+        root.update()
+        time.sleep(1)
+
+        if (temp == 0):
+            messagebox.showinfo("Time's up")
+
 # Button for starting the countdown
-btn = Button(root, text="Set Time", bd = '5')
+btn = Button(root, text="Set Time", bd = '5', command= submit)
 btn.place(x = 70, y = 120)
 
 
