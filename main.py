@@ -15,4 +15,10 @@ hour = StringVar()
 minute = StringVar()
 second = StringVar()
 
+# Set default values as zero
+hour.set("00")
+minute.set("00")
+second.set("00")
+
+
 root.mainloop()
