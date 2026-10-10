@@ -34,7 +34,7 @@ secondEntry.place(x=180, y=20)
 def submit():
     try:
         # check values
-        temp = int(hour.get())*3600 + int(minute.get())*60 + int(second)
+        temp = int(hour.get())*3600 + int(minute.get())*60 + int(second.get())
     except:
         print("Please input valid numbers")
 
