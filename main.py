@@ -29,6 +29,9 @@ hourEntry.place(x=80, y=20)
 minuteEntry.place(x=130, y=20)
 secondEntry.place(x=180, y=20)
 
+# Button for starting the countdown
+btn = Button(root, text="Set Time", bd = '5')
+btn.place(x = 70, y = 120)
 
 
 root.mainloop()
